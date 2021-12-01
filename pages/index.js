@@ -21,6 +21,8 @@ export async function getStaticProps() {
   return { props: {
     products: data.products
   },
+  // it will only work on production, refresh every 10 second
+  revalidate: 10
 };
 }
 
