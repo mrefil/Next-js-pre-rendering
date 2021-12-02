@@ -1,10 +1,7 @@
-<<<<<<< Updated upstream
-=======
 import path from "path";
 import fs from "fs/promises";
 import Link from "next/link";
 
->>>>>>> Stashed changes
 function HomePage(props) {
   const { products } = props;
 
@@ -19,13 +16,6 @@ function HomePage(props) {
   );
 }
 
-<<<<<<< Updated upstream
-export async function getStaticProps() {
-  return { props: {
-    products: [{id: 'p1', title: 'Product 1'}],
-  },
-};
-=======
 export async function getStaticProps(context) {
   const filePath = path.join(process.cwd(), "data", "dummy-backend.json");
   const jsonData = await fs.readFile(filePath);
@@ -50,7 +40,6 @@ export async function getStaticProps(context) {
     // it will only work on production, refresh every 10 second
     revalidate: 10,
   };
->>>>>>> Stashed changes
 }
 
 export default HomePage;
